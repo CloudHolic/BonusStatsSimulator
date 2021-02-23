@@ -17,7 +17,7 @@ namespace BonusStatsSimulator.ViewModels
             get { return Get(() => Type); }
             set { Set(() => Type, value); }
         }
-        
+
         public BonusStat Bonus
         {
             get { return Get(() => Bonus); }
@@ -26,9 +26,20 @@ namespace BonusStatsSimulator.ViewModels
 
         public MainWindowViewModel()
         {
-            Bonus = new BonusStat();
             Level = 140;
             Type = "강력한 환생의 불꽃";
+            Bonus = new BonusStat();
+        }
+
+        public ICommand ComboCommand
+        {
+            get
+            {
+                return Get(() => ComboCommand, new RelayCommand(() =>
+                {
+                    Bonus.Reset();
+                }));
+            }
         }
 
         public ICommand ChooseCommand
