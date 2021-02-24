@@ -178,6 +178,23 @@ namespace BonusStatsSimulator.Models
             Reset();
         }
 
+        public BonusStat(BonusStat prevBonus)
+        {
+            Str = prevBonus.Str;
+            Dex = prevBonus.Dex;
+            Int = prevBonus.Int;
+            Luk = prevBonus.Luk;
+            Hp = prevBonus.Hp;
+            Mp = prevBonus.Mp;
+            All = prevBonus.All;
+            Atk = prevBonus.Atk;
+            Mtk = prevBonus.Mtk;
+            Spd = prevBonus.Spd;
+            Jmp = prevBonus.Jmp;
+            Def = prevBonus.Def;
+            ReqLev = prevBonus.ReqLev;
+        }
+
         public void Reset()
         {
             Str = Dex = Int = Luk = Hp = Mp = All = Atk = Mtk = Spd = Jmp = Def = ReqLev = 0;

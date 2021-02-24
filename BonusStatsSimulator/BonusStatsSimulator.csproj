@@ -74,12 +74,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Contents\ContTrialSettingView.xaml.cs">
+      <DependentUpon>ContTrialSettingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\TextToForegroundConverter.cs" />
     <Compile Include="Models\BonusStat.cs" />
+    <Compile Include="Models\ContTrialSettings.cs" />
     <Compile Include="Utils\BonusStatProc.cs" />
+    <Compile Include="Utils\CustomDialogManager.cs" />
+    <Compile Include="Utils\ICustomDialogManager.cs" />
     <Compile Include="Utils\MathExtensions.cs" />
+    <Compile Include="ViewModels\ContTrialSettingViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModelBase.cs" />
+    <Compile Include="ViewModels\IDialogViewModelBase.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Page Include="Contents\ContTrialSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Converters\Converters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

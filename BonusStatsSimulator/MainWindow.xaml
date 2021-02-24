@@ -8,7 +8,7 @@
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:viewModels="clr-namespace:BonusStatsSimulator.ViewModels"
         mc:Ignorable="d"
-        Title="추옵 시뮬레이터" Height="510" Width="300" ResizeMode="NoResize">
+        Title="추옵 시뮬레이터" Height="510" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <mah:MetroWindow.DataContext>
         <viewModels:MainWindowViewModel/>
     </mah:MetroWindow.DataContext>
@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -65,7 +66,7 @@
                 <TextBlock Grid.Column="0" Text="STR" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Str, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Str, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="15" TextAlignment="Right"
                            Foreground="{Binding Bonus.Str, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
                            Margin="15,0,0,0"/>
             </Grid>
@@ -78,9 +79,9 @@
                 <TextBlock Grid.Column="0" Text="DEX" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0" />
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Dex, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.Dex, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Dex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Dex, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -91,9 +92,9 @@
                 <TextBlock Grid.Column="0" Text="INT" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Int, Mode=TwoWay}" FontSize="15" TextAlignment="Right" 
-                           Foreground="{Binding Bonus.Int, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Int, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Int, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -104,9 +105,9 @@
                 <TextBlock Grid.Column="0" Text="LUK" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Luk, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.Luk, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Luk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Luk, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -117,9 +118,9 @@
                 <TextBlock Grid.Column="0" Text="HP" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Hp, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.Hp, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Hp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Hp, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -130,9 +131,9 @@
                 <TextBlock Grid.Column="0" Text="MP" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Mp, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.Mp, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}" 
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Mp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Mp, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -143,9 +144,9 @@
                 <TextBlock Grid.Column="0" Text="올스탯" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.All, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.All, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}" 
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.All, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.All, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
                 <TextBlock Grid.Column="2" Text="%" FontSize="15" TextAlignment="Left" Foreground="Green" Margin="5,0,0,0"/>
             </Grid>
             <Grid Margin="15,5">
@@ -157,9 +158,9 @@
                 <TextBlock Grid.Column="0" Text="공격력" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Atk, Mode=TwoWay}" FontSize="15" TextAlignment="Right" 
-                           Foreground="{Binding Bonus.Atk, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}" 
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Atk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Atk, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -170,9 +171,9 @@
                 <TextBlock Grid.Column="0" Text="마력" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Mtk, Mode=TwoWay}" FontSize="15" TextAlignment="Right" 
-                           Foreground="{Binding Bonus.Mtk, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Mtk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Mtk, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -183,9 +184,9 @@
                 <TextBlock Grid.Column="0" Text="이동속도" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Spd, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.Spd, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Spd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Spd, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -196,9 +197,9 @@
                 <TextBlock Grid.Column="0" Text="점프력" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Jmp, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.Jmp, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Jmp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Jmp, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -209,9 +210,9 @@
                 <TextBlock Grid.Column="0" Text="방어력" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="+" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.Def, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.Def, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.Def, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.Def, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
             <Grid Margin="15,5">
                 <Grid.ColumnDefinitions>
@@ -222,18 +223,20 @@
                 <TextBlock Grid.Column="0" Text="착감" FontSize="15"/>
                 <TextBlock Grid.Column="0" Text=":" FontSize="15" Margin="70,0,0,0"/>
                 <TextBlock Grid.Column="1" Text="-" FontSize="15" Foreground="Green" Margin="20,0,0,0"/>
-                <TextBlock Grid.Column="1" Text="{Binding Bonus.ReqLev, Mode=TwoWay}" FontSize="15" TextAlignment="Right"
-                           Foreground="{Binding Bonus.ReqLev, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"
-                           Margin="15,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding Bonus.ReqLev, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           FontSize="15" TextAlignment="Right" Margin="15,0,0,0"
+                           Foreground="{Binding Bonus.ReqLev, Mode=TwoWay, Converter={StaticResource TextToForegroundConverter}}"/>
             </Grid>
         </StackPanel>
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="2" Margin="0,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="다시 뽑기" Margin="10,0" Command="{Binding ChooseCommand}"/>
-            <Button Grid.Column="1" Content="초기화" Margin="10,0" Command="{Binding ResetCommand}"/>
+            <Button Grid.Column="0" Content="다시 뽑기" Margin="5,0" Command="{Binding  TrialCommand}"/>
+            <Button Grid.Column="1" Content="연속 뽑기" Margin="5,0" Command="{Binding ContCommand}"/>
+            <Button Grid.Column="2" Content="초기화" Margin="5,0" Command="{Binding ResetCommand}"/>
         </Grid>
     </Grid>
 </mah:MetroWindow>
